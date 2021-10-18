@@ -4,6 +4,7 @@ import api from '../../resources/api';
 import { Container, Ul, SearchBar, SearchBtn } from './styles';
 
 
+
 function Main() {
     const [pokemonList, setPokemonList] = useState([])
     const [input, setInput] = useState("")
@@ -45,6 +46,8 @@ function Main() {
 
       </Container>
     )
+
+  
 }
 
 export default Main
