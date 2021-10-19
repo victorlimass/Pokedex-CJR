@@ -7,8 +7,6 @@ export const Container = styled.div`
   max-width: 100%;
   box-sizing: border-box;
 
-  
-
   > h1 {
     text-align: center;
     font-weight: bold;
@@ -26,8 +24,8 @@ export const Container = styled.div`
 export const Ul = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 2rem;
+  justify-content: center;
+  gap: 3rem;
   padding: 0;
   margin: 2rem 0;
 `
