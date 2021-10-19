@@ -1,11 +1,14 @@
+import React from 'react';
 import Main from './pages/Main/main';
 import GlobalStyle from './styles/global';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <div>
       <GlobalStyle/>
-      <Main/>
+      <Main />
+      <Footer />
     </div>
   );
 }

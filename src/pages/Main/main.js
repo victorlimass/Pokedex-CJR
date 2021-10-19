@@ -43,11 +43,10 @@ function Main() {
             <Pokemon key={pokemon.id} pokemon={pokemon}/>
           )}
         </Ul>
-
       </Container>
     )
 
-  
 }
 
 export default Main
+

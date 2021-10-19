@@ -6,6 +6,7 @@ export const Container = styled.div`
   padding: 2rem 5rem;
   max-width: 100%;
   box-sizing: border-box;
+
   
 
   > h1 {
