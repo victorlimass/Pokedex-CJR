@@ -3,6 +3,9 @@ import Pagination from '../../components/Pagination/Pagination';
 import Pokemon from '../../components/Pokemon/Pokemon';
 import api from '../../resources/api';
 import { Container, Ul, SearchBar, SearchBtn } from './styles';
+import SearchIcon from "@material-ui/icons/Search";
+import Axios from 'axios'
+
 
 
 
@@ -12,6 +15,17 @@ function Main() {
     const [input, setInput] = useState("")  // pesquisa do usuario
     const [pageInput, setPageInput] = useState(1)  // pagina digitada
     const [currentPage, setCurrentPage] = useState(1)
+    const [pokemonName, setPokemonName] = useState("");
+
+    const searchPokemon = () => {
+      Axios.get(`https://pokedex20201.herokuapp.com/${pokemonName}`).then(
+        (response)=>{
+          setPokemonName({
+            name: pokemonName,
+          })
+      }
+      );
+    };
 
     useEffect(() => {
         async function getPokemonPage(){
@@ -62,7 +76,9 @@ function Main() {
         <form onSubmit={handleSearch} autoComplete="off">
           <SearchBar type="text" placeholder="Pesquise um Pokémon!"
             value={input} onChange={(event) => {setInput(event.target.value)}}/>
-          <SearchBtn>Pesquisar</SearchBtn>
+          <SearchBtn onClick={searchPokemon}>
+            <SearchIcon />
+          </SearchBtn>
         </form>
 
         <Ul>
