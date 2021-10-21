@@ -73,6 +73,7 @@ function Main() {
     return (
       <Container>
         <h1>Pokédex</h1>
+        <a href="./login">Login</a>
         <form onSubmit={handleSearch} autoComplete="off">
           <SearchBar type="text" placeholder="Pesquise um Pokémon!"
             value={input} onChange={(event) => {setInput(event.target.value)}}/>
