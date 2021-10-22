@@ -1,6 +1,11 @@
 import styled from "styled-components"
 
 export const Li = styled.li`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+
     position: relative;
     padding: 16px;
     border-radius: 12px;
@@ -11,12 +16,12 @@ export const Li = styled.li`
     color: white;
     cursor: pointer;
 
-    * img {
+    > img {
         width: 200px;
         height: 200px;
     }
 
-    &:hover * img {
+    &:hover > img {
         transition: .5s;
         transform: scale(1.07);
     }
@@ -31,4 +36,13 @@ export const PokeNumber = styled.span`
     border-top-right-radius: 12px;
     border-bottom-left-radius: 12px;
 
+`
+
+
+export const Kind = styled.span`
+    background-color: ${props => props.color};
+    border-radius: 5px;
+    margin: 0.5em;
+    padding: 2px;
+    align-items: center;
 `
