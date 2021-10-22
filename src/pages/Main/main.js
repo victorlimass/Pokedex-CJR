@@ -4,10 +4,9 @@ import Pokemon from '../../components/Pokemon/Pokemon';
 import api from '../../resources/api';
 import { Container, Ul, SearchBar, SearchBtn } from './styles';
 import SearchIcon from "@material-ui/icons/Search";
-import Axios from 'axios'
 
 function Main() {
-    const [pokemonPage, setPokemonPage] = useState([])
+    const [pokemonPage, setPokemonPage] = useState([])  // dados dos pokemons da pagina
     const [pokemonList, setPokemonList] = useState([])
     const [input, setInput] = useState("")  // pesquisa do usuario
     const [pageInput, setPageInput] = useState(1)  // pagina digitada
