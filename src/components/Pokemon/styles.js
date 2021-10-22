@@ -20,8 +20,9 @@ export const Li = styled.li`
     box-shadow: 1px 1px 8px lightgrey;
 
     .pokemon-img {
-        width: 200px;
-        height: 200px;
+        width: 150px;
+        height: 150px;
+        margin: 16px;
     }
 
     &:hover {
@@ -46,12 +47,12 @@ export const Li = styled.li`
 export const PokemonId = styled.span`
     position: absolute;
     top: 0;
-    right: 0;
+    left: 0;
     padding: 4px;
     color: white;
     background-color: ${props => props.color};
-    border-top-right-radius: 12px;
-    border-bottom-left-radius: 12px;
+    border-top-left-radius: 12px;
+    border-bottom-right-radius: 12px;
 `
 
 

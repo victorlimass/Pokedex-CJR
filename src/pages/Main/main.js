@@ -5,6 +5,7 @@ import api from '../../resources/api';
 import { Container, Ul, SearchBar, SearchBtn } from './styles';
 import SearchIcon from "@material-ui/icons/Search";
 
+
 function Main() {
     const [pokemonPage, setPokemonPage] = useState([])  // dados dos pokemons da pagina
     const [pokemonList, setPokemonList] = useState([])
