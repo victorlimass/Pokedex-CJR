@@ -24,7 +24,7 @@ export default function SignIn(){
             .catch(error => {
                 alert("Usuário já cadastrado. Por favor, faça o login.")
                 console.log(error)
-                setRedirect("/login")
+                setRedirect("/Login")
             })
         }
         event.preventDefault();

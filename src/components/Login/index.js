@@ -24,7 +24,7 @@ export default function Login(){
         .catch(error => {
             alert("Usuário não existe. Por Favor, faça o cadastro.")
             console.log(error)
-            setRedirect("/signin")
+            setRedirect("/Signin")
         })
         }
         loggin();
