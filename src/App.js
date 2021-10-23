@@ -1,25 +1,55 @@
 import React from 'react';
+import {BrowserRouter as Router, Switch, Route, Link, Redirect} from "react-router-dom";
+import { useState } from 'react';
+import {UserContext} from "./components/UserContext"
 import Main from './pages/Main/main';
 import GlobalStyle from './styles/global';
 import Footer from './components/Footer';
-import {BrowserRouter as Router, Switch, Route, Link, Redirect} from "react-router-dom";
 import './App.css';
+import User from "./components/User"
+import Login from "./components/Login"
+import Signin from "./components/Signin"
+
 
 function App() {
+  const [userName, setUserName] = useState();
+
   return (
-    <Router>
-      <div>
-        <header>
-          <h1>Pokédex</h1>
-          <Link to="/login">Login</Link>
-        </header>
-      </div>
-    <div>
-      <GlobalStyle/>
-      <Main />
-      <Footer />
-    </div>
-    </Router>
+    <UserContext.Provider value={[userName, setUserName]}>
+      <Router>
+        <div>
+          <header>
+            <h1>Pokedex</h1>
+            {userName?(
+              <h2>Olá,{userName}</h2>
+            ) :
+            (<Link to="/login">Login</Link>)
+            }
+            <br/>
+          </header>
+          <Switch>
+            <Route path="/login">
+              <Login/>
+            </Route>
+            <Route path="/signin">
+              <Signin/>
+            </Route>
+            <Route path="/User">
+              <User/>
+            </Route>
+            <Route>
+              <Redirect to="/Main"/>
+            </Route>
+          </Switch>
+        </div>
+        <div>
+          <GlobalStyle/>
+          <Main />
+          <Footer />
+        </div>
+      </Router>
+    </UserContext.Provider>
+
   );
 }
 
