@@ -18,12 +18,12 @@ function App() {
     <UserContext.Provider value={[userName, setUserName]}>
       <Router>
         <div>
-          <header>
+          <header className="header">
             <h1>Pokedex</h1>
             {userName?(
-              <h2>Olá,{userName}</h2>
+              <h2>Olá, {userName}</h2>
             ) :
-            (<Link to="/login">Login</Link>)
+            (<Link className= "login" to="/login">Login</Link>)
             }
             <br/>
           </header>

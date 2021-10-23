@@ -7,7 +7,7 @@ export const BtnPage = styled.button`
     border-radius: 50%;
     font-size: 2em;
     color: white;
-    background-color: ${props => props.color};
+    background-color: #dc0a2d;
     cursor: pointer;
 `
 

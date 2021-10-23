@@ -54,7 +54,7 @@ export const SearchBtn = styled.button`
   outline: none;
   border-radius: 16px;
   
-  background-color: #E3350DEE;
+  background-color:  #dc0a2d;
   color: white;
   cursor: pointer;
 `
