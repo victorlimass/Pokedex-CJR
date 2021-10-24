@@ -11,6 +11,10 @@ import Login from "./components/Login"
 import Signin from "./components/Signin"
 
 
+// FALTOU:
+// pokemons favoritos do usuario
+// pop up com a descrição do pokemon
+
 function App() {
   const [userName, setUserName] = useState();
 

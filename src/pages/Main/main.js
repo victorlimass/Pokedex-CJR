@@ -8,8 +8,8 @@ import SearchIcon from "@material-ui/icons/Search";
 function Main() {
     const [pokemonPage, setPokemonPage] = useState([])  // dados dos pokemons da pagina
     const [pokemonList, setPokemonList] = useState([])
-    const [input, setInput] = useState("")  // pesquisa do usuario
-    const [pageInput, setPageInput] = useState(1)  // pagina digitada
+    const [input, setInput] = useState("")              // pesquisa do usuario
+    const [pageInput, setPageInput] = useState(1)       // pagina digitada
     const [currentPage, setCurrentPage] = useState(1)
     
     useEffect(() => {
