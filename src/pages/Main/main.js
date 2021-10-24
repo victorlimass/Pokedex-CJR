@@ -55,6 +55,7 @@ function Main() {
             setPageInput(33)
         }
     }
+    
 
     return (
       <Container>
@@ -65,6 +66,7 @@ function Main() {
             <SearchIcon />
           </SearchBtn>
         </form>
+        
 
         <Ul>
           {pokemonList.map((pokemon) =>
