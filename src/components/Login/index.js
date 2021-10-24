@@ -8,11 +8,11 @@ export default function Login(){
     const [userName, setUserName] = useContext(UserContext)
     const [redirect, setRedirect] = useState();
 
-    if(redirect){
+    if (redirect){
         return <Redirect to={redirect}/>
     }
 
-    const handleSubmit = (event)=>{
+    const handleSubmit = (event)=> {
         event.preventDefault()
         async function loggin(){
         await axios.get("https://pokedex20201.herokuapp.com/users/"+name)

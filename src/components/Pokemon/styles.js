@@ -22,7 +22,7 @@ export const Li = styled.li`
     .pokemon-img {
         width: 150px;
         height: 150px;
-        margin: 16px;
+        margin: 22px;
     }
 
     &:hover {
@@ -61,8 +61,9 @@ export const Kind = styled.span`
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     border-radius: 5px;
     margin: 0.5em;
-    padding: 3px;
+    padding: 4px;
     color: black;
+    text-shadow: 0px 0px 3px lightgrey;
     align-items: center;
     font-weight: bold;
 `

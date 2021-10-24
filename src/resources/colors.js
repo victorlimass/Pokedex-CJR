@@ -1,26 +1,26 @@
 const Colors = {
-    principal: '#E3350DEE',
-    principalClaro: '#E3350DCC',
-    pokemonBackground: '#EEEEEE',
-    // tipos de pokemon
-    bug: "#7ED578",
-    electric: "#EEE23A",
-    fairy: "#FF7EE5",
-    fighting: "#F17373",
-    fire: "#FFB433",
-    flying: "#D7F1E9",
-    ghost: "#A292BC",
-    grass: "#4DEE42",
-    ground: "#AA8546",
-    ice: "#9DD2EA",
-    normal: "#B5B986",
-    poison: "#CE52F9",
-    psychic: "#FFC157",
-    rock: "#757575",
-    steel: "#A1A1A1",
-    water: "#5991EE",
-    dragon: "#766A5F",
-    dark: "#666666"
-  };
-  
-  export default Colors;
+  principal: '#E3350DEE',
+  principalClaro: '#E3350DCC',
+  pokemonBackground: '#EEEEEE',
+  // tipos de pokemon
+  bug: "#6DC466",
+  electric: "#DDD129",
+  fairy: "#EE6DD4",
+  fighting: "#E06262",
+  fire: "#EEA322",
+  flying: "#B5D0C7",
+  ghost: "#9181AB",
+  grass: "#3CDD31",
+  ground: "#997435",
+  ice: "#8CC1D9",
+  normal: "#A4A875",
+  poison: "#BD41E8",
+  psychic: "#EEB046",
+  rock: "#646464",
+  steel: "#909090",
+  water: "#4880DD",
+  dragon: "#65594E",
+  dark: "#666666"
+};
+
+export default Colors;

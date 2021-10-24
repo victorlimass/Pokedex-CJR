@@ -11,10 +11,10 @@ function Main() {
     const [input, setInput] = useState("")  // pesquisa do usuario
     const [pageInput, setPageInput] = useState(1)  // pagina digitada
     const [currentPage, setCurrentPage] = useState(1)
-
-
+    
     useEffect(() => {
         async function getPokemonPage(){
+            setPageInput(currentPage)
             api.get(`/pokemons/?page=${currentPage}/`)
             .then((resp)=>{
                 setPokemonPage(resp.data)
@@ -26,26 +26,49 @@ function Main() {
             })
         }
         getPokemonPage()
-      }, [currentPage])
-
-
+    }, [currentPage])
+    
+    
+    // ao pesqusar o pokemon, apenas o pokemon pesquisado aparece
     function handleSearch(event) {
         event.preventDefault()
+        
+        async function getPokemon(){
+            api.get(`/pokemons/${input.toLowerCase()}`)
+            .then((resp)=>{
+                if (resp.data !== null) {
+                    if (input !== "") { // resp.data retornou apenas 1 pokemon
+                        setPokemonPage(null)
+                        setPokemonList([resp.data])
+                    } else {    // resp.data retornou a pagina 1 inteira
+                        setPokemonPage(resp.data)
+                        setPokemonList(resp.data.data)
+                    }
+                } else {    // nenhum pokemon corresponde a pesquisa
+                    // trigger useEffect
+                    setCurrentPage(prevPage => prevPage !== 1 ? 1 : 0)
+                }
+            })
+            .catch((err)=>{
+                console.log("erro:", err)
+            })
+        }
+        getPokemon()
     }
-
+    
     // clica para avancar ou voltar uma pagina
     function handleBtnPageClick(next) {
-        if (next && pokemonPage.next_page != null) {
-            let nextPage = currentPage + 1
-            setCurrentPage(nextPage);
-            setPageInput(nextPage)
-        } else if (!next && pokemonPage.prev_page != null) {
-            let prevPage = currentPage - 1 
-            setCurrentPage(prevPage);
-            setPageInput(prevPage)
+        if (pokemonPage !== null) {
+            if (next && pokemonPage.next_page !== null) {
+                let nextPage = currentPage + 1
+                setCurrentPage(nextPage)
+            } else if (!next && pokemonPage.prev_page !== null) {
+                let prevPage = currentPage - 1 
+                setCurrentPage(prevPage)
+            }
         }
     }
-
+    
     // enter apos digitar uma pagina
     function handlePageEnter(input) {
         if (input <= 33) {  // numero maximo de paginas
@@ -56,35 +79,36 @@ function Main() {
         }
     }
     
-
+    
     return (
       <Container>
         <form onSubmit={handleSearch} autoComplete="off">
           <SearchBar type="text" placeholder="Pesquise um Pokémon!"
             value={input} onChange={(event) => {setInput(event.target.value)}}/>
-          <SearchBtn >
+          <SearchBtn>
             <SearchIcon />
           </SearchBtn>
         </form>
-        
-
+          
+  
         <Ul>
           {pokemonList.map((pokemon) =>
             <Pokemon key={pokemon.id} pokemon={pokemon}/>
           )}
         </Ul>
-
+  
         <br/>
-        <Pagination handleBtnPageClick={handleBtnPageClick}
-                    handlePageEnter={handlePageEnter}
-                    input={pageInput}
-                    setInput={setPageInput}
-                    setCurrentPage={setCurrentPage}/>
-
+        { pokemonPage !== null ?
+          <Pagination handleBtnPageClick={handleBtnPageClick}
+                      handlePageEnter={handlePageEnter}
+                      input={pageInput}
+                      setInput={setPageInput}
+                      setCurrentPage={setCurrentPage}/>
+          : 
+          <br/>
+        }
+        <br/>
       </Container>
     )
-
 }
-
 export default Main
-

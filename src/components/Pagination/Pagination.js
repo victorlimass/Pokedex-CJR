@@ -4,7 +4,7 @@ import { Container, BtnPage } from "./styles"
 function Pagination({handleBtnPageClick, handlePageEnter, input, setInput}) {
 
     function handleOnChange(input) {
-        if (!isNaN(parseInt(input[input.length-1])) || input == "") { // checar se input eh numero
+        if (!isNaN(parseInt(input[input.length-1])) || input === "") { // checar se input eh numero
             setInput(input)
         }
     }
